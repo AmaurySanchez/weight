@@ -1,13 +1,14 @@
 <?php 
+require_once"Calculos.php";
     class Usuario{
         private $nombre="";
         private $sexo="";
         private $pass="";
         private $email="";
         private $peso=0.0;
-        private $altura=0;
-        private $imc=0;
-        private$pesoIdeal=0;
+        private $altura=0.0;
+        private $imc=0.0;
+        private$pesoIdeal=0.0;
         private $estado="";
 
         public function __construct($nombre,$sexo,$pass,$email,$peso,$altura){
@@ -17,6 +18,10 @@
             $this->email=$email;
             $this->peso=$peso;
             $this->altura=$altura;
+            $imc=Calculos::calcularImc($peso,$altura);
+            $this->imc= $imc;
+            $this->pesoIdeal= Calculos::pesoIdeal($peso,$altura,$sexo);
+            $this->estado= Calculos::resultadoImc($imc);
         }
 
         //Getters
@@ -36,7 +41,7 @@
             return $this->email;
         }
 
-        public function getpeso(){
+        public function getPeso(){
             return $this->peso;
         }
 
@@ -44,7 +49,7 @@
             return $this->altura;
         }
 
-        public function getimc(){
+        public function getImc(){
             return $this->imc;
         }
 
