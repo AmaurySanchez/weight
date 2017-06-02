@@ -2,6 +2,7 @@
 <head>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/scripts.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,6 +35,20 @@
     <div >
     <div  class="col-md-6 col-md-offset-3 textoBloque1">
       Para saber si tu peso es el adecuado para tu constitución corporal, la OMS ofrece el Indice de masa corporal o IMC. Dicho indice nos indica si el peso que tenemos es el adecuado para nuestra constitución y establece una escala por la cual se mide el riesgo de padecer enfermedades si no estamos en un peso adecuado para nuestra edad y constitución.
+    </div>
+
+    <div class="col-md-6 col-md-offset-3 textoBloque1 calculoIMC" >
+            <p class="textoEncabezado">Calculadora de calorias</p>
+        <form method="post" id="formulario">
+            <label class="col-md-12" for="peso"> Peso en Kg</label>
+            <input  type="number" name="peso" id="peso" step="0.01"/><br/><br/>
+            <label class="col-md-12" for="altura"> Altura en cm</label>
+            <input  type="number" name="altura" id="altura" step="0.01"/><br/><br/>
+            <button class="btn btn-primary btn-lg btn-block" id="enviar" type="button"> Calcula tu IMC </button><br/>
+            <div id="resultado" class="col-md-12"> </div>
+
+        </form>
+
     </div>
 
     </section>

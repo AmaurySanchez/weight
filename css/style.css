@@ -106,6 +106,7 @@ body {
 
 #bloque1{
 margin-top:1%;
+margin-bottom:1%;
 font-size: 2em;
 text-align: center !important;
 color:#466a90;
@@ -116,3 +117,17 @@ font-size: 1.3em;
 text-align: center !important;
 word-break: normal;
 }
+
+.calculoIMC{
+font-size: 1.3em;
+word-break: normal;
+margin-top:5%;
+margin-bottom:1%;
+background-color: royalblue;
+}
+
+.textoEncabezado{
+    font-size: 2em;
+    color: #a7ad61;
+}
+

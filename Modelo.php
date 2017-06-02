@@ -9,9 +9,9 @@
     $user4 = new Usuario ("Casi","Mujer","124587","eva29@gmail.com",62,1.57,56,2);
     $persistencia= new OperacionesSql();
 
-    //echo round((Calculos::calcularImc($user4->getPeso(),$user4->getAltura())),2);
+    echo round((Calculos::calcularImc($user4->getPeso(),$user4->getAltura())),2);
     //echo Calculos::resultadoImc(Calculos::calcularImc($user4->getPeso(),$user4->getAltura()));
-    echo Calculos::pesoIdeal($user4->getPeso(),$user4->getAltura(),$user4->getSexo());
+    //echo Calculos::pesoIdeal($user4->getPeso(),$user4->getAltura(),$user4->getSexo());
 
         echo $persistencia->guardarUsuario($user2);
         echo $persistencia->guardarUsuario($user);
