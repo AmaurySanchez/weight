@@ -10,8 +10,10 @@ require_once"Calculos.php";
         private $imc=0.0;
         private$pesoIdeal=0.0;
         private $estado="";
+        private $edad=0;
+        private $nivelActividadFisica=0;
 
-        public function __construct($nombre,$sexo,$pass,$email,$peso,$altura){
+        public function __construct($nombre,$sexo,$pass,$email,$peso,$altura,$edad,$nivelActividadFisica){
             $this->nombre=$nombre;
             $this->sexo=$sexo;
             $this->pass=$pass;
@@ -22,6 +24,9 @@ require_once"Calculos.php";
             $this->imc= $imc;
             $this->pesoIdeal= Calculos::pesoIdeal($peso,$altura,$sexo);
             $this->estado= Calculos::resultadoImc($imc);
+            $this->edad=$edad;
+            $this->nivelActividadFisica=$nivelActividadFisica;
+
         }
 
         //Getters
@@ -61,6 +66,14 @@ require_once"Calculos.php";
             return $this->estado;
         }
 
+         public function getEdad(){
+            return $this->edad;
+        }
+
+        public function getNivelActividadFisica(){
+            return $this->nivelActividadFisica;
+        }
+
         //Setters
 
         public function setNombre($nombre){
@@ -93,6 +106,14 @@ require_once"Calculos.php";
 
         public function setEstado($estado){
             $this->estado=$estado;
+        }
+
+        public function setEdad($edad){
+            $this->edad=$edad;
+        }
+
+         public function setNivelActividadFisica($nivelActividadFisica){
+            $this->edad=$nivelActividadFisica;
         }
 
     }

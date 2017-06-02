@@ -51,5 +51,84 @@
 
             return $pesoIdeal;
         }
+
+         public function deNivelActividadASuplemento($nivelActividadFisica){
+            $multiplicador=0;
+
+            if($nivelActividadFisica==1){
+                $multiplicador= 1.2;
+            }
+            elseif($nivelActividadFisica==2){
+                $multiplicador= 1.375;
+            }
+             elseif($nivelActividadFisica==3){
+                $multiplicador= 1.55;
+            }
+             elseif($nivelActividadFisica==4){
+                $multiplicador= 1.725;
+            }
+             elseif($nivelActividadFisica==5){
+                $multiplicador= 1.9;
+            }
+            return $multiplicador;
+        }
+
+         static public function caloriasDiariasMantener($peso,$altura,$sexo,$edad,$nivelActividadFisica){
+            $caloriasDiarias=0;
+            $multiplicador=calculos::deNivelActividadASuplemento($nivelActividadFisica);
+            $sexo=strtolower($sexo);
+            $altura=$altura*100;
+            if($sexo=="hombre"){
+                $caloriasDiarias=((66 + (13.7 * $peso))  +  ((5 * ($altura))) - ((6.8 * $edad)))*$multiplicador;
+            }
+            elseif($sexo=="mujer"){
+                $caloriasDiarias=((655 + (9.6 * $peso))  +  ((1.8 * ($altura))) - ((4.7 * $edad)))*$multiplicador;
+            }
+            else{
+                $caloriasDiarias=0;
+            }
+
+            return $caloriasDiarias;
+        }
+
+        static public function caloriasDiariasBajar($peso,$altura,$sexo,$edad,$nivelActividadFisica){
+            $caloriasDiarias=0;
+            $multiplicador=calculos::deNivelActividadASuplemento($nivelActividadFisica);
+            $sexo=strtolower($sexo);
+            $altura=$altura*100;
+            if($sexo=="hombre"){
+                $caloriasDiarias=(((66 + (13.7 * $peso))  +  ((5 * ($altura))) - ((6.8 * $edad)))*$multiplicador)*0.85;
+            }
+            elseif($sexo=="mujer"){
+                $caloriasDiarias=(((655 + (9.6 * $peso))  +  ((1.8 * ($altura))) - ((4.7 * $edad)))*$multiplicador)*0.85;
+            }
+            else{
+                $caloriasDiarias=0;
+            }
+
+            return $caloriasDiarias;
+        }
+
+         static public function caloriasDiariasSubir($peso,$altura,$sexo,$edad,$nivelActividadFisica){
+            $caloriasDiarias=0;
+            $multiplicador=calculos::deNivelActividadASuplemento($nivelActividadFisica);
+            $sexo=strtolower($sexo);
+            $altura=$altura*100;
+            if($sexo=="hombre"){
+                $caloriasDiarias=(((66 + (13.7 * $peso))  +  ((5 * ($altura))) - ((6.8 * $edad)))*$multiplicador)/0.85;
+            }
+            elseif($sexo=="mujer"){
+                $caloriasDiarias=(((655 + (9.6 * $peso))  +  ((1.8 * ($altura))) - ((4.7 * $edad)))*$multiplicador)/0.85;
+            }
+            else{
+                $caloriasDiarias=0;
+            }
+
+            return $caloriasDiarias;
+        }
+
+       
     }
+
+
 ?>
