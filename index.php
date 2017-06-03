@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-md-6 col-md-offset-3 textoBloque1 calculoIMC" >
-            <p class="textoEncabezado">Calculadora de calorias</p>
+            <p class="textoEncabezado">Calculadora de IMC</p>
         <form method="post" id="formulario">
             <label class="col-md-12" for="peso"> Peso en Kg</label>
             <input  type="number" name="peso" id="peso" step="0.01"/><br/><br/>
@@ -48,6 +48,82 @@
             <div id="resultado" class="col-md-12"> </div>
 
         </form>
+
+    </div>
+
+     <div class="col-md-6 col-md-offset-3 textoBloque1"  >
+            <div class="table-responsive"> 
+             <div class="col-md-12">
+                 Tabla de IMC
+            </div>      
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ÍNDICE MASA CORPORAL</th>
+        <th>CLASIFICACIÓN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>>16</td>
+        <td>Infrapeso: Delgadez Severa</td>
+        
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>16.00 - 16.99</td>
+        <td>Infrapeso: Delgadez moderada</td>
+        
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>17.00 - 18.49</td>
+        <td>Infrapeso: Delgadez aceptable</td>
+        
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>18.50 - 24.99</td>
+        <td>Peso Normal</td>
+        
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>25.00 - 29.99</td>
+        <td>Sobrepeso</td>
+        
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>30.00 - 34.99</td>
+        <td>Obeso: Tipo I</td>
+        
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>35.00 - 40.00</td>
+        <td>Obeso: Tipo II</td>
+        
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>>40.00</td>
+        <td>Obeso: Tipo III</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
 
     </div>
 

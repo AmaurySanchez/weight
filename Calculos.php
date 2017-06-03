@@ -2,6 +2,7 @@
     class Calculos{
 
        static public function calcularImc($peso,$altura){
+           if($altura==0){$altura=1;}
             return ($peso/(pow($altura,2)));
         }
 
