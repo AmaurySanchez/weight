@@ -131,3 +131,13 @@ background-color: royalblue;
     color: #a7ad61;
 }
 
+#tabla{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #009688;
+}
+
+.backgroundCalorias{
+    background-color:#c9d6cb !important;
+}
+
