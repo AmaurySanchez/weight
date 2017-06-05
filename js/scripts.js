@@ -1,7 +1,7 @@
 $(function(){
     $("#enviar").click(function(){
         var url= "Controlador.php";
-        
+
             $.ajax({
                 type:"POST",
                 url:url,

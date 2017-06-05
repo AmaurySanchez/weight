@@ -17,7 +17,7 @@
                 <a href="#" data-toggle="dropdown">IMC <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="#" data-toggle="dropdown">Cálculo calorias diarias <span class="caret"></span></a>
+                <a href="caloriasDiarias.php" data-toggle="dropdown">Cálculo calorias diarias <span class="caret"></span></a>
             </li>
                 <li class="dropdown">
                 <a href="#" data-toggle="dropdown">Dieta <span class="caret"></span></a>
