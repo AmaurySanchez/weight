@@ -16,7 +16,7 @@
             <li class="dropdown">
                 <a href="imc.php" data-toggle="dropdown">IMC <span class="caret"></span></a>
             </li>
-             <li class="dropdown">
+            <li class="dropdown">
                 <a href="pesoIdeal.php" data-toggle="dropdown">Peso ideal <span class="caret"></span></a>
             </li>
             <li class="dropdown">
@@ -32,44 +32,21 @@
       <section class="container-fluid">
       <div  class="row">
     <div id="bloque1" class="col-md-12">
-     Calcula las calorias que debes consumir para estar en forma
+      Consigue y mantén tu peso ideal
     </div>
 
     <div >
     <div  class="col-md-6 col-md-offset-3 textoBloque1">
-      <p>Una vez que sabes tu tu IMC y conoces tu estado físico lo siguiente que debes hacer es calcular las calorias diarias que debes consumir para mantenerte en forma</p>
+      Para saber si tu peso es el adecuado para tu constitución corporal, la OMS ofrece el Indice de masa corporal o IMC. Dicho indice nos indica si el peso que tenemos es el adecuado para nuestra constitución y establece una escala por la cual se mide el riesgo de padecer enfermedades si no estamos en un peso adecuado para nuestra edad y constitución.
     </div>
 
-    <div class="col-md-6 col-md-offset-3 textoBloque1 calculoIMC backgroundCalorias" >
-            <p class="textoEncabezado">Calculadora de calorías diarias</p>
+    <div class="col-md-6 col-md-offset-3 textoBloque1 calculoIMC" >
+            <p class="textoEncabezado">Calculadora de IMC</p>
         <form method="post" id="formulario">
             <label class="col-md-12" for="peso"> Peso en Kg</label>
             <input  type="number" name="peso" id="peso" step="0.01"/><br/><br/>
-            <label class="col-md-12" for="altura"> Altura en m</label>
+            <label class="col-md-12" for="altura"> Altura en cm</label>
             <input  type="number" name="altura" id="altura" step="0.01"/><br/><br/>
-            <div class="col-md-12">
-            <p>Sexo</p>
-            <label  for="hombre"> Hombre</label>
-            <input  type="radio" name="sexo" value="hombre"id="hombre" />
-            <label for="mujer"> Mujer</label>
-            <input  type="radio" name="sexo" value="mujer"id="mujer"/><br/><br/>
-            </div>
-
-
-            <label class="col-md-12" for="edad"> Edad</label>
-            <input  type="number" name="edad" id="edad"/><br/><br/>
-
-            <div class="form-group">
-                <label for="nivelActividadFisica">Nivel de actividad física:</label>
-                <select class="form-control" name="nivelActividadFisica" id="nivelActividadFisica">
-                    <option value="1">Poco o ningún ejercicio</option>
-                    <option value="2">Ejercicio ligero (1-3 días a la semana)</option>
-                    <option value="3">Ejercicio moderado (3-5 días a la semana)</option>
-                    <option value="4">Ejercicio fuerte (6-7 días a la semana)</option>
-                    <option value="5">Ejercicio muy fuerte (dos veces al día, entrenamientos muy duros)</option>
-                </select>
-            </div>
-
             <button class="btn btn-primary btn-lg btn-block" id="enviar" type="button"> Calcula tu IMC </button><br/>
             <div id="resultado" class="col-md-12"> </div>
 
@@ -77,6 +54,81 @@
 
     </div>
 
+     <div class="col-md-6 col-md-offset-3 textoBloque1" id="tabla"  >
+            <div class="table-responsive"> 
+             <div class="col-md-12 textoEncabezado">
+                 Tabla de IMC
+            </div>      
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ÍNDICE MASA CORPORAL</th>
+        <th>CLASIFICACIÓN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>>16</td>
+        <td>Infrapeso: Delgadez Severa</td>
+        
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>16.00 - 16.99</td>
+        <td>Infrapeso: Delgadez moderada</td>
+        
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>17.00 - 18.49</td>
+        <td>Infrapeso: Delgadez aceptable</td>
+        
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>18.50 - 24.99</td>
+        <td>Peso Normal</td>
+        
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>25.00 - 29.99</td>
+        <td>Sobrepeso</td>
+        
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>30.00 - 34.99</td>
+        <td>Obeso: Tipo I</td>
+        
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>35.00 - 40.00</td>
+        <td>Obeso: Tipo II</td>
+        
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>>40.00</td>
+        <td>Obeso: Tipo III</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+    </div>
 
     </section>
 

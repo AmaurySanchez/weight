@@ -29,14 +29,14 @@
             elseif($imc>=35 && $imc<40){
                 $resultado="Obesidad: Tipo II";
             }
-            elseif($imc>45){
+            elseif($imc>40){
                 $resultado="Obesidad: Tipo III";
             }
             
             return $resultado;
         }
         //Devuelve el peso ideal, en caso de no especificarse el sexo se devuelve cero.
-        static public function pesoIdeal($peso,$altura,$sexo){
+        static public function pesoIdeal($altura,$sexo){
             $pesoIdeal=0;
             $sexo=strtolower($sexo);
             $altura=$altura*100;

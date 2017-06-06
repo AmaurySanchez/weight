@@ -9,12 +9,12 @@
     $user4 = new Usuario ("Casi","Mujer","124587","eva29@gmail.com",62,1.57,56,2);
     $persistencia= new OperacionesSql();
 
-    echo round((Calculos::calcularImc($user4->getPeso(),$user4->getAltura())),2);
+    //echo round((Calculos::calcularImc($user4->getPeso(),$user4->getAltura())),2);
     //echo Calculos::resultadoImc(Calculos::calcularImc($user4->getPeso(),$user4->getAltura()));
-    //echo Calculos::pesoIdeal($user4->getPeso(),$user4->getAltura(),$user4->getSexo());
+    echo Calculos::pesoIdeal($user4->getAltura(),$user4->getSexo());
 
-        echo $persistencia->guardarUsuario($user2);
-        echo $persistencia->guardarUsuario($user);
+        //echo $persistencia->guardarUsuario($user2);
+        //echo $persistencia->guardarUsuario($user);
         //echo $persistencia->borrarUsuario($user);
        // echo $persistencia->mostrarUsuarios($user);
        /*$usuarios=$persistencia->mostrarUsuarios();
@@ -25,8 +25,8 @@
      //  $usuario=$persistencia->mostrarUsuario("sokerone@hotmail.com");
        //echo $usuario["nombre"];
 
-       echo Calculos::caloriasDiariasMantener($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
-       echo Calculos::caloriasDiariasBajar($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
-       echo Calculos::caloriasDiariasSubir($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
+       //echo Calculos::caloriasDiariasMantener($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
+       //echo Calculos::caloriasDiariasBajar($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
+       //echo Calculos::caloriasDiariasSubir($user4->getPeso(),$user4->getAltura(),$user4->getSexo(),$user4->getEdad(),$user4->getNivelActividadFisica())."<br/>";
 
 ?>
