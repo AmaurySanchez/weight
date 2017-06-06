@@ -116,10 +116,10 @@
             $sexo=strtolower($sexo);
             $altura=$altura*100;
             if($sexo=="hombre"){
-                $caloriasDiarias=(((66 + (13.7 * $peso))  +  ((5 * ($altura))) - ((6.8 * $edad)))*$multiplicador)/0.85;
+                $caloriasDiarias=(((66 + (13.7 * $peso))  +  ((5 * ($altura))) - ((6.8 * $edad)))*$multiplicador)/1.15;
             }
             elseif($sexo=="mujer"){
-                $caloriasDiarias=(((655 + (9.6 * $peso))  +  ((1.8 * ($altura))) - ((4.7 * $edad)))*$multiplicador)/0.85;
+                $caloriasDiarias=(((655 + (9.6 * $peso))  +  ((1.8 * ($altura))) - ((4.7 * $edad)))*$multiplicador)*1.15;
             }
             else{
                 $caloriasDiarias=0;
