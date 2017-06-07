@@ -11,19 +11,19 @@
                 <div><img class="img-responsive" src="img/running.jpg"/></div>
                 <div class="barra"> <ul class="nav nav-tabs">
             <li class="dropdown">
-                <a href="index.php" data-toggle="dropdown">Home <span class="caret"></span></a>
+                <a href="index.php" >Home <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="imc.php" data-toggle="dropdown">IMC <span class="caret"></span></a>
+                <a href="imc.php" >IMC <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="pesoIdeal.php" data-toggle="dropdown">Peso ideal <span class="caret"></span></a>
+                <a href="pesoIdeal.php" >Peso ideal <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="caloriasDiarias.php" data-toggle="dropdown">Cálculo calorias diarias <span class="caret"></span></a>
+                <a href="caloriasDiarias.php" >Cálculo calorias diarias <span class="caret"></span></a>
             </li>
                 <li class="dropdown">
-                <a href="#" data-toggle="dropdown">Dieta <span class="caret"></span></a>
+                <a href="#" >Dieta <span class="caret"></span></a>
                 
             </li>
         </ul>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="col-md-6 col-md-offset-3 textoBloque1 calculoIMC" >
-            <p class="textoEncabezado">Calculadora de IMC</p>
+           
         <form method="post" id="formulario">
             <label class="col-md-12" for="peso"> Peso en Kg</label>
             <input  type="number" name="peso" id="peso" step="0.01"/><br/><br/>

@@ -11,19 +11,19 @@
                 <div><img class="img-responsive" src="img/running.jpg"/></div>
                 <div class="barra"> <ul class="nav nav-tabs">
             <li class="dropdown">
-                <a href="index.php" data-toggle="dropdown">Home <span class="caret"></span></a>
+                <a href="index.php" >Home <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="imc.php" data-toggle="dropdown">IMC <span class="caret"></span></a>
+                <a href="imc.php" >IMC <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="pesoIdeal.php" data-toggle="dropdown">Peso ideal <span class="caret"></span></a>
+                <a href="pesoIdeal.php" >Peso ideal <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="caloriasDiarias.php" data-toggle="dropdown">Cálculo calorias diarias <span class="caret"></span></a>
+                <a href="caloriasDiarias.php" >Cálculo calorias diarias <span class="caret"></span></a>
             </li>
                 <li class="dropdown">
-                <a href="#" data-toggle="dropdown">Dieta <span class="caret"></span></a>
+                <a href="#" >Dieta <span class="caret"></span></a>
                 
             </li>
         </ul>
