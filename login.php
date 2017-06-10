@@ -43,6 +43,8 @@
 												<button  name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" >Logueate</button>
 											</div>
 										</div>
+										<div id="resultadoLogin" class="col-sm-6 col-sm-offset-3">
+										</div>
 									</div>
 									<div class="form-group">
 										<div class="row">

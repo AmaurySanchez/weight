@@ -252,7 +252,7 @@ background-color: royalblue;
     color: #666;
 }
 
-#resultadoRegistro{
+#resultadoRegistro, #resultadoLogin{
 	text-align: center
 }
 

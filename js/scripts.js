@@ -62,6 +62,7 @@ $(function(){
                 url:url,
                 data: $("#login-form").serialize(),
                 success: function(data){
+                     $("#resultadoLogin").html(data);
                 }
             });
         return false;

@@ -94,7 +94,25 @@
                 $resultado=$res;
             }
             else{
-                $resultado="Error login";
+                $resultado=array("error"=>"Error login");
+            }
+            $db=null;
+            return $resultado;
+        }
+
+         public function listaDesayunos(){
+            $resultado="";
+            $conex= new Conexion();
+            $db=$conex->conex();
+            $sql="select * from comidas";
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+           
+            if($res=$stmt->fetchall(PDO::FETCH_ASSOC)){
+                $resultado=$res;
+            }
+            else{
+                $resultado=array("error"=>"Error al mostrar las comidas");
             }
             $db=null;
             return $resultado;

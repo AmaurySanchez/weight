@@ -46,7 +46,22 @@ elseif((isset($_POST["email"]) && $_POST["email"]!="") && (isset($_POST["passwor
     $contraseña=$_POST["password"];
     $email=$_POST["email"];
         $persistencia= new OperacionesSql();
-        echo $persistencia->login($email,$contraseña)["nombre"];
+        if(isset($persistencia->login($email,$contraseña)["nombre"])){
+            echo $persistencia->login($email,$contraseña)["nombre"];
+        }
+        else{
+             echo $persistencia->login($email,$contraseña)["error"];
+        }
+}
+
+elseif(isset($_POST["lista")){
+        $persistencia= new OperacionesSql();
+        if(isset($persistencia->listaDesayunos())){
+            echo json_encode($persistencia->listaDesayunos());
+        }
+        else{
+             echo $persistencia->listaDesayunos()["error"];
+        }
 }
 
 ?>
