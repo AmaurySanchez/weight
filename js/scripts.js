@@ -35,4 +35,38 @@ $(function(){
 
 });
 
+$(function(){
+    $("#register-submit").click(function(){
+        var url= "Controlador.php";
+
+            $.ajax({
+                type:"POST",
+                url:url,
+                data: $("#register-form").serialize(),
+                success: function(data){
+                    $("#resultadoRegistro").html(data);
+                    setTimeout('document.location.reload()',2000);
+                }
+            });
+        return false;
+    });
+
+});
+
+$(function(){
+    $("#login-submit").click(function(){
+        var url= "Controlador.php";
+
+            $.ajax({
+                type:"POST",
+                url:url,
+                data: $("#login-form").serialize(),
+                success: function(data){
+                }
+            });
+        return false;
+    });
+
+});
+
 

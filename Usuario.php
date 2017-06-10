@@ -22,7 +22,7 @@ require_once"Calculos.php";
             $this->altura=$altura;
             $imc=Calculos::calcularImc($peso,$altura);
             $this->imc= $imc;
-            $this->pesoIdeal= Calculos::pesoIdeal($peso,$altura,$sexo);
+            $this->pesoIdeal= Calculos::pesoIdeal($altura,$sexo);
             $this->estado= Calculos::resultadoImc($imc);
             $this->edad=$edad;
             $this->nivelActividadFisica=$nivelActividadFisica;

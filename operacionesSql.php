@@ -76,7 +76,25 @@
                 $resultado=$res;
             }
             else{
-                $resultado="Ha habido un error y no se ha podido borrar el usuario";
+                $resultado="Ha habido un error y no se ha podido Mostrar el usuario";
+            }
+            $db=null;
+            return $resultado;
+        }
+
+        public function login($email, $contraseña){
+            $resultado="";
+            $conex= new Conexion();
+            $db=$conex->conex();
+            $sql="select * from usuarios where email="."'".$email."'"." AND "."pass='".$contraseña."'";
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+           
+            if($res=$stmt->fetch(PDO::FETCH_ASSOC)){
+                $resultado=$res;
+            }
+            else{
+                $resultado="Error login";
             }
             $db=null;
             return $resultado;

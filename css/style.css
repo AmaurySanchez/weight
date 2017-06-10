@@ -248,7 +248,11 @@ background-color: royalblue;
 }
 
 /*Estilos*/
-#lab{
-    color: black;
+#login-form, #register-form{
+    color: #666;
+}
+
+#resultadoRegistro{
+	text-align: center
 }
 
