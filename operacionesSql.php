@@ -94,14 +94,14 @@
                 $resultado=$res;
             }
             else{
-                $resultado=array("error"=>"Error login");
+                $resultado=array();
             }
             $db=null;
             return $resultado;
         }
 
          public function listaComidas($tipo){
-            $resultado="";
+            $resultado=array();
             $conex= new Conexion();
             $db=$conex->conex();
             $sql="select * from comidas where tipo='".$tipo."'";
@@ -112,7 +112,7 @@
                 $resultado=$res;
             }
             else{
-                $resultado=array("error"=>"Error al mostrar las comidas");
+                $resultado=array();
             }
             $db=null;
             return $resultado;
