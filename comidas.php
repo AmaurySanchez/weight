@@ -1,13 +1,5 @@
 <?php
-require_once "Calculos.php";
-require_once "operacionesSql.php";
-$persistencia= new OperacionesSql();
-$listado= $persistencia->listaDesayunos();
-
- foreach($listado as $lista){
-            echo $lista["nombre"]." ".$lista["calorias"]."<br/>";
-       }
-
+ require_once 'controladorComidas.php';
 ?>
 <html>
 <head>
@@ -48,12 +40,11 @@ $listado= $persistencia->listaDesayunos();
         <div class="col-md-12 textoEncabezado">
             <script>document.writeln(new Date().toJSON().slice(0,10))</script>
         </div>
-        <script>
-         $("#destino").load("Controlador.php", {lista: "vacio"});
-        </script>
-        <div id="destino">
+        <form action="ControladorComidas.php" method="POST">
 
-        </div>
+            
+            
+        </form>
 
     </section>
 

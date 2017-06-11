@@ -100,11 +100,11 @@
             return $resultado;
         }
 
-         public function listaDesayunos(){
+         public function listaComidas($tipo){
             $resultado="";
             $conex= new Conexion();
             $db=$conex->conex();
-            $sql="select * from comidas";
+            $sql="select * from comidas where tipo='".$tipo."'";
             $stmt=$db->prepare($sql);
             $stmt->execute();
            
