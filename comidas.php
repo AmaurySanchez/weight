@@ -40,13 +40,28 @@
         <div class="col-md-6 col-md-offset-3 textoEncabezado">
             Fecha: <script>document.writeln(new Date().toJSON().slice(0,10))</script>
         </div>
-        <form action="ControladorComidas.php" method="POST">
+        <form action="controladorComidas.php" method="POST" id="comidasForm">
+
+               <div>
+
+                     <div class="form-group col-md-6 col-md-offset-3">
+              <br/>
+                <label for="desayunos">Fechas:</label>
+                <select class="form-control" name="desayunos" id="desayunos">
+                    <?php foreach($fechas as $fecha):?>
+                        <option value="<?= $fecha["fecha"]?>" id="<?= $fecha["fecha"]?>"><?= $fecha["fecha"]?></option>
+                    <?php endforeach;?>
+                </select>
+              </div>
+
+               </div>
+
               <div class="form-group col-md-6 col-md-offset-3">
               <br/>
                 <label for="desayunos">Desayuno:</label>
                 <select class="form-control" name="desayunos" id="desayunos">
-                    <?php foreach($desayuno as $desayuno):?>
-                        <option value="<?= $desayuno["codigo"]?>" id="<?= $desayuno["codigo"]?>"><?= $desayuno["nombre"]?></option>
+                    <?php foreach($desayuno as $desayunos):?>
+                        <option value="<?= $desayunos["codigo_comida"].",".$desayunos["tipo"]?>" id="<?= $desayunos["codigo_comida"]?>"><?= $desayunos["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -55,7 +70,7 @@
                 <label for="almuerzos">Almuerzo:</label>
                 <select class="form-control" name="almuerzos" id="almuerzos">
                     <?php foreach($almuerzo as $almuerzos):?>
-                        <option value="<?= $almuerzos["codigo"]?>" id="<?= $almuerzos["codigo"]?>"><?= $almuerzos["nombre"]?></option>
+                        <option value="<?= $almuerzos["codigo_comida"]?>" id="<?= $almuerzos["codigo_comida"]?>"><?= $almuerzos["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -64,7 +79,7 @@
                 <label for="comidas">Comida:</label>
                 <select class="form-control" name="comidas" id="comidas">
                     <?php foreach($comida as $comidas):?>
-                        <option value="<?= $comidas["codigo"]?>" id="<?= $comidas["codigo"]?>"><?= $comidas["nombre"]?></option>
+                        <option value="<?= $comidas["codigo_comida"]?>" id="<?= $comidas["codigo_comida"]?>"><?= $comidas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -73,7 +88,7 @@
                 <label for="postres">Postres:</label>
                 <select class="form-control" name="postres" id="postres">
                     <?php foreach($postre as $postre):?>
-                        <option value="<?= $postre["codigo"]?>" id="<?= $postre["codigo"]?>"><?= $postre["nombre"]?></option>
+                        <option value="<?= $postre["codigo_comida"]?>" id="<?= $postre["codigo_comida"]?>"><?= $postre["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -82,7 +97,7 @@
                 <label for="merienda">Merienda:</label>
                 <select class="form-control" name="merienda" id="merienda">
                     <?php foreach($merienda as $meriendas):?>
-                        <option value="<?= $meriendas["codigo"]?>" id="<?= $meriendas["codigo"]?>"><?= $meriendas["nombre"]?></option>
+                        <option value="<?= $meriendas["codigo_comida"]?>" id="<?= $meriendas["codigo_comida"]?>"><?= $meriendas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -91,7 +106,7 @@
                 <label for="cena">Cena:</label>
                 <select class="form-control" name="cena" id="cena">
                     <?php foreach($cena as $cenas):?>
-                        <option value="<?= $cenas["codigo"]?>" id="<?= $cenas["codigo"]?>"><?= $cenas["nombre"]?></option>
+                        <option value="<?= $cenas["codigo_comida"]?>" id="<?= $cenas["codigo_comida"]?>"><?= $cenas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -99,6 +114,7 @@
               <button class="btn btn-primary btn-lg btn-block" id="enviarComidas">Guardar comidas del día</button>
             
         </form>
+        <script>alert("<?=$_SESSION["email"]?>"); </script>
 
     </section>
 
@@ -115,6 +131,7 @@
             </span>
       </div>
     </footer>
+    <?php //session_destroy();?>
 <script src="js/bootstrap.min.js">
 </body>
 </html>

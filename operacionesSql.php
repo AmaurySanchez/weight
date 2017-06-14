@@ -118,6 +118,61 @@
             return $resultado;
         }
         
+        public function guardarComidas($email,$codigoComida,$tipoComida){
+            $fecha_actual = date("Y-m-d");
+            $resultado=array();
+            $conex= new Conexion();
+            $db=$conex->conex();
+            if($this->existeComida($email,$codigoComida,$fecha_actual)){
+     
+            }
+            else{
+                $sql="update usuarios_comidas set codigo_comida='".$codigoComida."', tipo_comida='".$tipoComida."' where fecha='$fecha_actual' and email='$email' and tipo_comida='$tipoComida'";
+                $stmt=$db->prepare($sql);
+                if($stmt->execute()){
+                    $resultado=true;
+                }
+                else{
+                    $resultado=false;
+                }
+            }
+           
+            $db=null;
+            return $resultado;
+        }
+
+         public function existeComida($email,$codigoComida){
+            $resultado=false;
+            $fechaComprobar = date("Y-m-d");
+            $conex= new Conexion();
+            $db=$conex->conex();
+            $sql="select * from usuarios_comidas where email="."'".$email."' and fecha="."'".$fechaComprobar."' and codigo_comida="."'".$codigoComida."'";
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+           
+            if($res=$stmt->fetch(PDO::FETCH_ASSOC)){
+                $resultado=true;
+            }
+            
+            $db=null;
+            return $resultado;
+        }
+
+          public function fechas($email){
+            $resultado=array();
+            $conex= new Conexion();
+            $db=$conex->conex();
+            $sql="select distinct fecha from usuarios_comidas where email="."'".$email."'";
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+           
+            if($res=$stmt->fetchAll(PDO::FETCH_ASSOC)){
+                $resultado=$res;
+            }
+            
+            $db=null;
+            return $resultado;
+        }
 
 
     }

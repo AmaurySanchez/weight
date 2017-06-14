@@ -62,7 +62,28 @@ $(function(){
                 url:url,
                 data: $("#login-form").serialize(),
                 success: function(data){
-                     $("#resultadoLogin").html(data);
+                     //$("#resultadoLogin").html(data);
+                     if(data){
+                            setTimeout('window.location.href="comidas.php"',2000);
+                     }
+                     
+                }
+            });
+        return false;
+    });
+
+});
+
+$(function(){
+    $("#enviarComidas").click(function(){
+        var url= "Controlador.php";
+
+            $.ajax({
+                type:"POST",
+                url:url,
+                data: $("#comidasForm").serialize(),
+                success: function(data){
+                    alert(data);
                 }
             });
         return false;

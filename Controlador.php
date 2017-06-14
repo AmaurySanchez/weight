@@ -1,5 +1,6 @@
 <?php 
 //require_once "Modelo.php";
+session_start();
 require_once "Calculos.php";
 require_once "operacionesSql.php";
 require_once "Usuario.php";
@@ -47,21 +48,24 @@ elseif((isset($_POST["email"]) && $_POST["email"]!="") && (isset($_POST["passwor
     $email=$_POST["email"];
         $persistencia= new OperacionesSql();
         if(isset($persistencia->login($email,$contraseña)["nombre"])){
-            echo $persistencia->login($email,$contraseña)["nombre"];
+            //echo $persistencia->login($email,$contraseña)["nombre"];
+            $_SESSION["email"]=$email;
+            $_SESSION["contraseña"]=$contraseña;
+            echo true;
         }
         else{
-             echo $persistencia->login($email,$contraseña)["error"];
+            // echo $persistencia->login($email,$contraseña)["error"];
         }
 }
 
-elseif(isset($_POST["lista")){
+elseif(isset($_POST["desayunos"])){
+    $desayunos=explode(',',$_POST["desayunos"]);
         $persistencia= new OperacionesSql();
-        if(isset($persistencia->listaDesayunos())){
-            echo json_encode($persistencia->listaDesayunos());
-        }
-        else{
-             echo $persistencia->listaDesayunos()["error"];
-        }
+       $persistencia->guardarComidas($_SESSION["email"],$desayunos[0],$desayunos[1]);
+       //$persistencia->existeComida($_SESSION["email"],$desayunos);
+      
 }
+
+
 
 ?>
