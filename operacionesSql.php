@@ -130,10 +130,18 @@
                 $sql="update usuarios_comidas set codigo_comida='".$codigoComida."', tipo_comida='".$tipoComida."' where fecha='$fecha_actual' and email='$email' and tipo_comida='$tipoComida'";
                 $stmt=$db->prepare($sql);
                 if($stmt->execute()){
-                    $resultado=true;
-                }
-                else{
-                    $resultado=false;
+
+                    if($stmt->rowCount()==0){
+                        $sentencia=$db->prepare("insert into usuarios_comidas values (:fecha,:email,:codigo_comida,:tipo_comida)");
+                        $sentencia->bindParam(':fecha',$fecha_actual);
+                        $sentencia->bindParam(':email',$email);
+                        $sentencia->bindParam(':codigo_comida',$codigoComida);
+                        $sentencia->bindParam(':tipo_comida',$tipoComida);
+                        $sentencia->execute();
+                        $resultado=true;
+                    }
+                    
+                    
                 }
             }
            
@@ -159,6 +167,22 @@
         }
 
           public function fechas($email){
+            $resultado=array();
+            $conex= new Conexion();
+            $db=$conex->conex();
+            $sql="select distinct fecha from usuarios_comidas where email="."'".$email."'";
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+           
+            if($res=$stmt->fetchAll(PDO::FETCH_ASSOC)){
+                $resultado=$res;
+            }
+            
+            $db=null;
+            return $resultado;
+        }
+
+         public function caloriasDia($email,$codigoComida,$tipoComida){
             $resultado=array();
             $conex= new Conexion();
             $db=$conex->conex();

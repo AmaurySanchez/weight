@@ -60,10 +60,30 @@ elseif((isset($_POST["email"]) && $_POST["email"]!="") && (isset($_POST["passwor
 
 elseif(isset($_POST["desayunos"])){
     $desayunos=explode(',',$_POST["desayunos"]);
+    
         $persistencia= new OperacionesSql();
-       $persistencia->guardarComidas($_SESSION["email"],$desayunos[0],$desayunos[1]);
-       //$persistencia->existeComida($_SESSION["email"],$desayunos);
-      
+        $persistencia->guardarComidas($_SESSION["email"],$desayunos[0],$desayunos[1]);
+        if(isset($_POST["almuerzos"])){
+            $almuerzos=explode(',',$_POST["almuerzos"]);
+            $persistencia->guardarComidas($_SESSION["email"],$almuerzos[0],$almuerzos[1]);
+        }
+        elseif(isset($_POST["comidas"])){
+            $comidas=explode(',',$_POST["comidas"]);
+            $persistencia->guardarComidas($_SESSION["email"],$comidas[0],$comidas[1]);
+        }
+         elseif(isset($_POST["postres"])){
+             $postres=explode(',',$_POST["postres"]);
+            $persistencia->guardarComidas($_SESSION["email"],$postres[0],$postres[1]);
+        }
+         elseif(isset($_POST["meriendas"])){
+             $meriendas=explode(',',$_POST["meriendas"]);
+            $persistencia->guardarComidas($_SESSION["email"],$meriendas[0],$meriendas[1]);
+        }
+         elseif(isset($_POST["cenas"])){
+             $cenas=explode(',',$_POST["cenas"]);
+            $persistencia->guardarComidas($_SESSION["email"],$cenas[0],$cenas[1]);
+        }
+
 }
 
 

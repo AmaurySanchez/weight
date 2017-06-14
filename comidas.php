@@ -47,7 +47,7 @@
                      <div class="form-group col-md-6 col-md-offset-3">
               <br/>
                 <label for="desayunos">Fechas:</label>
-                <select class="form-control" name="desayunos" id="desayunos">
+                <select class="form-control" name="fecha" id="fecha">
                     <?php foreach($fechas as $fecha):?>
                         <option value="<?= $fecha["fecha"]?>" id="<?= $fecha["fecha"]?>"><?= $fecha["fecha"]?></option>
                     <?php endforeach;?>
@@ -70,7 +70,7 @@
                 <label for="almuerzos">Almuerzo:</label>
                 <select class="form-control" name="almuerzos" id="almuerzos">
                     <?php foreach($almuerzo as $almuerzos):?>
-                        <option value="<?= $almuerzos["codigo_comida"]?>" id="<?= $almuerzos["codigo_comida"]?>"><?= $almuerzos["nombre"]?></option>
+                        <option value="<?= $almuerzos["codigo_comida"].",".$almuerzos["tipo"]?>" id="<?= $almuerzos["codigo_comida"]?>"><?= $almuerzos["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -79,7 +79,7 @@
                 <label for="comidas">Comida:</label>
                 <select class="form-control" name="comidas" id="comidas">
                     <?php foreach($comida as $comidas):?>
-                        <option value="<?= $comidas["codigo_comida"]?>" id="<?= $comidas["codigo_comida"]?>"><?= $comidas["nombre"]?></option>
+                        <option value="<?= $comidas["codigo_comida"].",".$comidas["tipo"]?>" id="<?= $comidas["codigo_comida"]?>"><?= $comidas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -88,7 +88,7 @@
                 <label for="postres">Postres:</label>
                 <select class="form-control" name="postres" id="postres">
                     <?php foreach($postre as $postre):?>
-                        <option value="<?= $postre["codigo_comida"]?>" id="<?= $postre["codigo_comida"]?>"><?= $postre["nombre"]?></option>
+                        <option value="<?= $postre["codigo_comida"].",".$postre["tipo"]?>" id="<?= $postre["codigo_comida"]?>"><?= $postre["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -97,7 +97,7 @@
                 <label for="merienda">Merienda:</label>
                 <select class="form-control" name="merienda" id="merienda">
                     <?php foreach($merienda as $meriendas):?>
-                        <option value="<?= $meriendas["codigo_comida"]?>" id="<?= $meriendas["codigo_comida"]?>"><?= $meriendas["nombre"]?></option>
+                        <option value="<?= $meriendas["codigo_comida"].",".$meriendas["tipo"]?>" id="<?= $meriendas["codigo_comida"]?>"><?= $meriendas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
@@ -106,7 +106,7 @@
                 <label for="cena">Cena:</label>
                 <select class="form-control" name="cena" id="cena">
                     <?php foreach($cena as $cenas):?>
-                        <option value="<?= $cenas["codigo_comida"]?>" id="<?= $cenas["codigo_comida"]?>"><?= $cenas["nombre"]?></option>
+                        <option value="<?= $cenas["codigo_comida"].",".$cenas["tipo"]?>" id="<?= $cenas["codigo_comida"]?>"><?= $cenas["nombre"]?></option>
                     <?php endforeach;?>
                 </select>
               </div>
